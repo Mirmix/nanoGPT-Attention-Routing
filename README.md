@@ -1,5 +1,6 @@
-
 # nanoGPT
+
+> **🚀 Extension Available**: This repository includes a **Learnable Attention Head Routing** extension that dynamically routes input tokens to a subset of attention heads per forward pass. See [README_ROUTING.md](README_ROUTING.md) for detailed documentation, implementation details, training results, and performance analysis.
 
 ![nanoGPT](assets/nanogpt.jpg)
 
