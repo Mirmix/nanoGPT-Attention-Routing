@@ -169,16 +169,16 @@ The training progress is logged and visualized through:
 #### Individual Model Curves
 
 **Routing Model Training Curves:**
-![Routing Training Curves](training_plots/routing_curves.png)
+![Routing Training Curves](assets/routing_curves.png)
 
 **Baseline Model Training Curves:**
-![Baseline Training Curves](training_plots/baseline_curves.png)
+![Baseline Training Curves](assets/baseline_curves.png)
 
 #### Model Comparison
 
 The comparison shows the routing model achieving better validation BPC throughout training:
 
-![Model Comparison](training_plots/model_comparison.png)
+![Model Comparison](assets/model_comparison.png)
 
 ### Training Results
 
@@ -296,10 +296,3 @@ python sample_both_models.py --start "The future of AI" --temperature 1.2 --top_
 ## Conclusion
 
 The learnable attention head routing extension demonstrates promising results with a 3.36% improvement in BPC while maintaining computational efficiency through top-k head selection. The mechanism successfully encourages specialization among attention heads while preserving the causal structure of the transformer architecture.
-
-python train_novel.py --config=config/train_enwik8_routing.py
-Traceback (most recent call last):
-  File "/gpfs/work4/0/tdse0635/nanoGPT/train_novel.py", line 70, in <module>
-    exec(open('configurator.py').read()) # overrides from command line or config file
-  File "<string>", line 47, in <module>
-ValueError: Unknown config key: config
