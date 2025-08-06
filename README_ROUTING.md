@@ -143,12 +143,57 @@ max_iters = 200000
 
 ### Performance Comparison
 
+
+
+> **Quick Evaluation:**  
+> For a fast evaluation on a smaller test set, you can use the following command:
+>
+> ```
+> python evaluate_models_binary.py
+> ```
+>
+> This will run evaluation with default settings and provide a quick comparison of both models' performance.
+
+
 | Model    | Loss (Nats) | BPC (Base 2) | Parameters<sup>†</sup> | Improvement |
 |----------|-------------|--------------|------------------------|-------------|
 | Baseline | 0.873679    | 1.26045      | 90.397M                | -           |
-| Routing  | 0.844327    | 1.218107     | 93.997M                | **3.36%**   |
+| Routing  | 0.844327    | 1.21810     | 93.997M                | **3.36%**   |
 
 <sup>†</sup>Parameter counts include positional embeddings.
+
+> **Update:** The results below reflects results from a full evaluation using the following command:
+>
+> ```
+> python evaluate_models_binary.py --use_full_dataset --batch_size 512
+> ```
+>
+> **This is the result with the full test:**
+>
+> ```bash
+> ==================================================
+> EVALUATION RESULTS
+> ==================================================
+> Routing Model:
+>   Loss: 0.843474 nats
+>   BPC:  1.216876 bits/char
+>   Parameters: 93,996,432 (total)
+>   Parameters: 93,210,000 (non-embedding)
+>
+> Baseline Model:
+>   Loss: 0.867359 nats
+>   BPC:  1.251334 bits/char
+>   Parameters: 90,397,440 (total)
+>   Parameters: 89,611,008 (non-embedding)
+>
+> Comparison:
+>   BPC Improvement: 0.034458 bits/char
+>   Improvement: 2.75%
+>   Parameter Increase (total): 3,598,992
+>   Parameter Increase (non-embedding): 3,598,992
+> ```
+
+
 
 ### Key Findings
 
