@@ -221,7 +221,7 @@ The training progress is logged and visualized through:
 
 #### Model Comparison
 
-The comparison shows the routing model achieving better validation BPC throughout training:
+The comparison shows the routing model achieving similar validation BPC throughout training, despite it only using 6 attention heads (out of 12):
 
 ![Model Comparison](assets/model_comparison.png)
 
@@ -245,15 +245,6 @@ After 200,000 iterations of training, the models achieved the following final va
 **Educational Project Limitations:**
 This repository was implemented as an educational side project to explore learnable attention head routing mechanisms. Due to limited computational resources and time constraints, no hyperparameter tuning was carried out. The results presented here are from a single training run with default configurations.
 
-**Evaluation Results:**
-The evaluation results shown are based on batch sampling rather than full test set evaluation due to computational time constraints. Full test set evaluation would provide more accurate results but requires significantly more time. The batch results may be slightly better or worse than actual full test set performance.
-
-**Potential Improvements:**
-- Hyperparameter optimization (learning rate, batch size, model architecture)
-- Different routing configurations (varying top-k values, entropy regularization)
-- Longer training runs with more iterations
-- Full test set evaluation for more accurate metrics
-- Ablation studies on different routing mechanisms
 
 ## Usage
 
@@ -324,11 +315,6 @@ python sample_both_models.py --start "The future of AI" --temperature 1.2 --top_
 3. **Entropy Regularization**: Encourages specialization by penalizing uniform distributions
 4. **Causal Preservation**: Maintains the autoregressive structure of the transformer
 
-### Efficiency Analysis
-
-- **Memory**: Minimal overhead from gate network parameters
-- **Computation**: Reduced attention computation when using top-k selection
-- **Scalability**: Mechanism scales with model size and can be applied to larger models
 
 ### Compatibility
 
